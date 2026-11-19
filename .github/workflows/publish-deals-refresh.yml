@@ -1,0 +1,50 @@
+# Publishes a scheduled deals refresh to the live site.
+#
+# The scheduled refresh runs in a cloud session that may not be allowed to push
+# to main (its Nov 19 runs updated the Claude-hosted copy but never main), so
+# it can push to its own claude/... branch instead.
+# When such a branch receives a commit whose message starts with
+# "Daily deals refresh" or "Deals refresh", this fast-forwards main to it.
+# Anything else (including normal fix branches) is left for review.
+name: Publish deals refresh
+
+on:
+  push:
+    branches:
+      - "claude/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-deals-refresh
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: startsWith(github.event.head_commit.message, 'Daily deals refresh') || startsWith(github.event.head_commit.message, 'Deals refresh')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check the page script still parses
+        run: |
+          python3 - <<'PY'
+          import re
+          s = open("index.html", encoding="utf-8").read()
+          main = re.search(r"<script>(.*?)</script>", s, re.S).group(1)
+          open("/tmp/main.js", "w", encoding="utf-8").write(main)
+          assert '<script id="photo-data"' in s, "photo block missing"
+          PY
+          node --check /tmp/main.js
+
+      - name: Fast-forward main to this refresh
+        run: |
+          git fetch origin main
+          if ! git merge-base --is-ancestor origin/main HEAD; then
+            echo "::error::This refresh branch does not include the latest main, so it can't be fast-forwarded. Rebase it on main and push again."
+            exit 1
+          fi
+          git push origin HEAD:main

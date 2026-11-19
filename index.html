@@ -189,7 +189,7 @@ a.card:hover{box-shadow:0 6px 18px rgba(20,87,58,.16);transform:translateY(-1px)
       <div class="chips" id="statusChips"></div>
     </div>
     <div class="grid" id="dealGrid"></div>
-    <p class="note">Prices come from published ads, retailer announcements and deal-site reports gathered Nov 18, 2026. Every 2026 Black Friday and Cyber Monday ad item published as text is listed, including the full leaked Costco ad. Target, Kohl's, Meijer and Best Buy ads are mostly image scans, so items that haven't been published as text aren't listed yet; Walmart hasn't released main-event prices yet, and Menards' Black Friday ad posts Nov 25. Local stores within 25 miles of New Palestine are included. Toy book items show regular prices, not sale prices; watch for those toys in Black Friday ads. A few Target toys don't have a published price yet. Costco prices are from a leaked ad. Amazon and Target prices from Nov 18 are early deals and may change when the main events start. Walmart's Nov 12–15 early prices are kept as a guide because many come back in the Nov 23–29 event. Always confirm the price before you buy. Tapping a deal opens a search for it on that store's site.</p>
+    <p class="note">Prices come from published ads, retailer announcements and deal-site reports gathered Nov 19, 2026, updated mid-afternoon (Amazon's Black Friday Week and Best Buy's doorbusters started today; Tractor Supply's ad added). Every 2026 Black Friday and Cyber Monday ad item published as text is listed, including the full leaked Costco ad. Target, Kohl's, Meijer and Best Buy ads are mostly image scans, so items that haven't been published as text aren't listed yet; Walmart hasn't released main-event prices yet, and Menards' Black Friday ad posts Nov 25. Local stores within 25 miles of New Palestine are included. Toy book items show regular prices, not sale prices; watch for those toys in Black Friday ads. A few Target toys don't have a published price yet. Costco prices are from a leaked ad. Amazon and Target prices from Nov 18 are early deals and may change when the main events start. Walmart's Nov 12–15 early prices are kept as a guide because many come back in the Nov 23–29 event. Always confirm the price before you buy. Tapping a deal opens a search for it on that store's site.</p>
     <p class="note" id="srcList"></p>
     <p class="xfoot">🎄 Merry Christmas from Mission Control 🎅</p>
   </section>
@@ -206,7 +206,7 @@ const STORES = {
   "Amazon":{c:"#232f3e"}, "Costco":{c:"#005daa"}, "Dick's":{c:"#0b6b4f"},
   "Lowe's":{c:"#004990"}, "Kohl's":{c:"#5b2a86"}, "Meijer":{c:"#d81e2b"},
   "Sam's Club":{c:"#0067a0"}, "Harbor Freight":{c:"#c8102e"}, "Home Depot":{c:"#f96302"},
-  "Academy":{c:"#00543c"}, "American Girl":{c:"#a3195b"}, "HOKA":{c:"#1f3a93"}, "Macy's":{c:"#e21a2c"}, "JCPenney":{c:"#b5121b"}, "Menards":{c:"#00843d"}, "Other":{c:"#6b7a70"}
+  "Academy":{c:"#00543c"}, "American Girl":{c:"#a3195b"}, "HOKA":{c:"#1f3a93"}, "Macy's":{c:"#e21a2c"}, "JCPenney":{c:"#b5121b"}, "Menards":{c:"#00843d"}, "Tractor Supply":{c:"#d6001c"}, "Other":{c:"#6b7a70"}
 };
 const CATS = ["Toy Books","Toys & Kids","Tech","TV & Home Theater","Sports & Outdoors","Kitchen","Home","Clothing & Beauty","Tools","Holiday","Grocery","Gift Cards"];
 
@@ -245,6 +245,17 @@ const SRC = {
   bestbuy3:"https://www.macrumors.com/2026/11/06/best-buy-reveals-black-friday-2/",
   macys2:"https://visualping.io/blog/macys-black-friday",
   menards:"https://www.dealnews.com/Menards-Early-Black-Friday-Deals-Up-to-70-off-extra-11-rebate-shipping-varies/22325205.html",
+  bestbuy4:"https://www.businesswire.com/news/home/20261117642101/en/Best-Buys-Black-Friday-sale-begins-Nov.-19",
+  amazon4:"https://9to5toys.com/2026/11/19/amazon-2026-black-friday-sale-now-live/",
+  amazon5:"https://www.tomsguide.com/live/news/best-amazon-black-friday-deals-live-thursday-november-19-2026",
+  amazon6:"https://www.popsci.com/gear/amazon-black-friday-deals-2026/",
+  amazon7:"https://9to5toys.com/2026/11/19/black-friday-amazon-deals-echo-fire-tv-alexa-tablet/",
+  hd3:"https://www.bobvila.com/reviews/home-depot-power-tools-early-black-friday-nov-2026/",
+  macys3:"https://thekrazycouponlady.com/tips/store-hacks/best-macys-black-friday-deals",
+  academy2:"https://www.academy.com/c/shops/black-friday/sports-black-friday-deals-and-gifts",
+  tsc:"https://katalozi365.com/us/tractor-supply-co/tractor-supply-co-2026-11-17-4450465/",
+  tsc2:"https://hip2save.com/tips/tractor-supply-black-friday/",
+  walmart2:"https://shopping.yahoo.com/deals/articles/black-friday-2026-walmart-see-100031872.html",
 };
 // s = start, e = end (inclusive, YYYY-MM-DD). leak = from leaked ad. early = early-event price
 const DEALS = [
@@ -933,11 +944,115 @@ const DEALS = [
  {id:"at24",store:"Amazon",cat:"Toy Books",book:"Amazon Top Toys",item:"Monster Jam Chomping Megalodon RC Truck",price:49.99,s:"2026-09-09",e:"2026-12-24",src:"amazontoys",q:"Monster Jam Chomping Megalodon RC Truck"},
  {id:"at25",store:"Amazon",cat:"Toy Books",book:"Amazon Top Toys",item:"Tickle Me Elmo Giggle Max 18\"",price:39.99,s:"2026-09-09",e:"2026-12-24",src:"amazontoys",q:"Tickle Me Elmo Giggle Max 18"},
  {id:"at26",store:"Amazon",cat:"Toy Books",book:"Amazon Top Toys",item:"Tonies Cuddle Minnie Mouse",price:29.99,s:"2026-09-09",e:"2026-12-24",src:"amazontoys",q:"Tonies Cuddle Minnie Mouse"},
+ // ---- Added Nov 19, 2026 ----
+ // Best Buy (Black Friday doorbusters Nov 19–29)
+ {id:"bn1",store:"Best Buy",cat:"TV & Home Theater",item:"TCL 65\" 4K smart TV (Doorbuster)",price:229.99,was:469.99,s:"2026-11-19",e:"2026-11-29",src:"bestbuy4",q:"TCL 65 inch 4K TV"},
+ {id:"bn2",store:"Best Buy",cat:"TV & Home Theater",item:"Insignia 40\" Full HD Fire TV (Doorbuster)",price:89.99,was:149.99,s:"2026-11-19",e:"2026-11-29",src:"bestbuy4",q:"Insignia 40 inch Fire TV"},
+ {id:"bn3",store:"Best Buy",cat:"Tech",item:"HP OmniBook 5 14\" 2K OLED touchscreen laptop",price:449.99,was:799.99,s:"2026-11-19",e:"2026-11-29",src:"bestbuy4",q:"HP OmniBook 5 14 OLED"},
+ {id:"bn4",store:"Best Buy",cat:"Tech",item:"Sony WH-1000XM5 noise-cancelling headphones",price:169,was:398,s:"2026-11-19",e:"2026-11-29",src:"bestbuy4",q:"Sony WH-1000XM5"},
+ {id:"bn5",store:"Best Buy",cat:"Home",item:"Shark PowerDetect Speed cordless stick vacuum",price:199.99,was:499.99,s:"2026-11-19",e:"2026-11-29",src:"bestbuy4",q:"Shark PowerDetect Speed cordless stick vacuum"},
+ {id:"bn6",store:"Best Buy",cat:"Tech",item:"Samsung Galaxy S26 FE",price:499.99,was:699.99,s:"2026-11-19",e:"2026-11-29",src:"bestbuy4",q:"Samsung Galaxy S26 FE"},
+ {id:"bn7",store:"Best Buy",cat:"Tech",item:"13\" MacBook Air (base model)",price:1049,was:1299,s:"2026-11-19",e:"2026-11-29",src:"bestbuy4",q:"MacBook Air 13 inch"},
+ {id:"bn8",store:"Best Buy",cat:"Kitchen",item:"Insignia refrigerator",price:299.99,was:749.99,s:"2026-11-19",e:"2026-11-29",src:"bestbuy4",q:"Insignia refrigerator"},
+ {id:"bn9",store:"Best Buy",cat:"Toys & Kids",item:"Select trading cards",deal:"Up to 50% off",s:"2026-11-19",e:"2026-11-29",src:"bestbuy4",q:"trading cards"},
+ {id:"bn10",store:"Best Buy",cat:"Gift Cards",item:"$100 Best Buy gift card for My Best Buy members (in store, limited)",price:60,was:100,s:"2026-11-27",e:"2026-11-27",src:"bestbuy4",q:"gift card"},
+ // Amazon (Black Friday Week, live Nov 19)
+ {id:"an1",store:"Amazon",cat:"Toys & Kids",item:"LEGO Creator 3-in-1 T. rex",price:41.99,was:59.99,s:"2026-11-19",e:"2026-11-30",src:"amazon6",url:"https://www.amazon.com/dp/B0CV21CH75"},
+ {id:"an2",store:"Amazon",cat:"Toys & Kids",item:"LEGO Star Wars The Mandalorian's N-1 Starfighter",price:41.99,was:59.99,s:"2026-11-19",e:"2026-11-30",src:"amazon6",url:"https://www.amazon.com/dp/B09Q9848S5"},
+ {id:"an3",store:"Amazon",cat:"Toys & Kids",item:"LEGO Creator 3-in-1 Majestic Rhino with Birds",price:26.99,was:59.99,s:"2026-11-19",e:"2026-11-30",src:"amazon5",q:"LEGO Creator 3 in 1 Wild Animals Majestic Rhino"},
+ {id:"an4",store:"Amazon",cat:"Toys & Kids",item:"KiwiCo Domino Machine STEM kit",price:25.46,was:29.95,s:"2026-11-19",e:"2026-11-30",src:"amazon6",url:"https://www.amazon.com/dp/B0B9VMN3BR"},
+ {id:"an5",store:"Amazon",cat:"Toys & Kids",item:"Kindle Colorsoft Kids",price:179.99,was:299.99,s:"2026-11-19",e:"2026-11-30",src:"amazon6",url:"https://www.amazon.com/dp/B0DZ9G3BHP"},
+ {id:"an6",store:"Amazon",cat:"Toys & Kids",item:"Echo Dot Kids",price:45,was:90,s:"2026-11-19",e:"2026-11-30",src:"amazon7",q:"Echo Dot Kids"},
+ {id:"an7",store:"Amazon",cat:"Toys & Kids",item:"Echo Pop Kids",price:22,was:50,s:"2026-11-19",e:"2026-11-30",src:"amazon7",q:"Echo Pop Kids"},
+ {id:"an8",store:"Amazon",cat:"Toys & Kids",item:"Echo Show 5 Kids",price:60,was:110,s:"2026-11-19",e:"2026-11-30",src:"amazon7",q:"Echo Show 5 Kids"},
+ {id:"an9",store:"Amazon",cat:"Tech",item:"Echo Show 8",price:130,was:200,s:"2026-11-19",e:"2026-11-30",src:"amazon7",q:"Echo Show 8"},
+ {id:"an10",store:"Amazon",cat:"Tech",item:"Kindle Paperwhite 16GB",price:130,was:200,s:"2026-11-19",e:"2026-11-30",src:"amazon7",q:"Kindle Paperwhite 16GB"},
+ {id:"an11",store:"Amazon",cat:"TV & Home Theater",item:"Fire TV Cube (Wi-Fi 6E)",price:90,was:200,s:"2026-11-19",e:"2026-11-30",src:"amazon4",url:"https://www.amazon.com/dp/B09BZZ3MM7"},
+ {id:"an12",store:"Amazon",cat:"TV & Home Theater",item:"Fire TV Stick 4K Plus",price:30,was:70,s:"2026-11-19",e:"2026-11-30",src:"amazon4",url:"https://www.amazon.com/dp/B0F7Z4QZTT"},
+ {id:"an13",store:"Amazon",cat:"TV & Home Theater",item:"Roku 65\" Plus Series QLED TV",price:429.99,was:649.99,s:"2026-11-19",e:"2026-11-30",src:"amazon6",url:"https://www.amazon.com/dp/B0DWHFWT5C"},
+ {id:"an14",store:"Amazon",cat:"TV & Home Theater",item:"Roku 50\" Select Series QLED TV",price:199.99,was:299.99,s:"2026-11-19",e:"2026-11-30",src:"amazon6",url:"https://www.amazon.com/dp/B0FXZ5GVBB"},
+ {id:"an15",store:"Amazon",cat:"Tech",item:"Sony DualSense PS5 controller",price:54,was:74,s:"2026-11-19",e:"2026-11-30",src:"amazon5",q:"PS5 DualSense wireless controller"},
+ {id:"an16",store:"Amazon",cat:"Tech",item:"Bose QuietComfort headphones",price:169,was:359,s:"2026-11-19",e:"2026-11-30",src:"amazon5",q:"Bose QuietComfort headphones"},
+ {id:"an17",store:"Amazon",cat:"Tech",item:"Beats Solo 4 on-ear headphones",price:99,was:199,s:"2026-11-19",e:"2026-11-30",src:"amazon5",q:"Beats Solo 4"},
+ {id:"an18",store:"Amazon",cat:"Tech",item:"Apple AirPods Max 2",price:429,was:549,s:"2026-11-19",e:"2026-11-30",src:"amazon4",q:"Apple AirPods Max 2"},
+ {id:"an19",store:"Amazon",cat:"Tech",item:"Samsung Galaxy Tab S10 Lite 128GB",price:300,was:400,s:"2026-11-19",e:"2026-11-30",src:"amazon4",url:"https://www.amazon.com/dp/B0FF5JJ3CP"},
+ {id:"an20",store:"Amazon",cat:"Tech",item:"Google Pixel Watch 5 (41mm)",price:300,was:400,s:"2026-11-19",e:"2026-11-30",src:"amazon4",url:"https://www.amazon.com/dp/B0H7X25DRT"},
+ {id:"an21",store:"Amazon",cat:"Tech",item:"Ring Spotlight Cam 2K",price:89.99,was:169.99,s:"2026-11-19",e:"2026-11-30",src:"amazon5",q:"Ring Spotlight Cam 2K"},
+ {id:"an22",store:"Amazon",cat:"Kitchen",item:"Ninja Air Fryer Pro",price:89,was:129,s:"2026-11-19",e:"2026-11-30",src:"amazon5",q:"Ninja Air Fryer Pro"},
+ {id:"an23",store:"Amazon",cat:"Sports & Outdoors",item:"Theragun Prime massage gun (6th gen)",price:189.99,was:329.99,s:"2026-11-19",e:"2026-11-30",src:"amazon6",url:"https://www.amazon.com/dp/B0FKCJNHWB"},
+ {id:"an24",store:"Amazon",cat:"Tools",item:"BLACK+DECKER 20V MAX drill + 68-pc project kit",price:89.99,was:119,s:"2026-11-19",e:"2026-11-30",src:"amazon6",url:"https://www.amazon.com/dp/B00C625KVE"},
+ {id:"an25",store:"Amazon",cat:"Tools",item:"Dremel 4000 rotary tool kit",price:49,was:84.99,s:"2026-11-19",e:"2026-11-30",src:"amazon6",url:"https://www.amazon.com/dp/B0CWBY5Z2M"},
+ {id:"an26",store:"Amazon",cat:"Tools",item:"IRWIN Vise-Grip 12\" locking pliers (stocking stuffer)",price:16.99,was:32.68,s:"2026-11-19",e:"2026-11-30",src:"amazon6",url:"https://www.amazon.com/dp/B00004SBB1"},
+ // Home Depot (early Black Friday tool deals)
+ {id:"hn1",store:"Home Depot",cat:"Tools",item:"DEWALT ATOMIC 20V MAX drill/driver kit (DCD794D1)",price:99,was:179,s:"2026-11-15",e:"2026-11-25",src:"hd3",q:"DEWALT DCD794D1"},
+ {id:"hn2",store:"Home Depot",cat:"Tools",item:"DEWALT 20V MAX drill + impact driver kit (DCK240C2)",price:149,was:239,s:"2026-11-15",e:"2026-11-25",src:"hd3",q:"DEWALT DCK240C2"},
+ {id:"hn3",store:"Home Depot",cat:"Tools",item:"Milwaukee M18 9-tool combo kit (3692-29)",price:699,was:1389,s:"2026-11-15",e:"2026-11-25",src:"hd3",q:"Milwaukee 3692-29"},
+ {id:"hn4",store:"Home Depot",cat:"Tools",item:"Milwaukee M12 FUEL hammer drill + impact driver kit (3497-22)",price:199,was:249,s:"2026-11-15",e:"2026-11-25",src:"hd3",q:"Milwaukee 3497-22"},
+ {id:"hn5",store:"Home Depot",cat:"Tools",item:"RYOBI ONE+ 18V drill + impact driver kit (PCL1200K2)",price:99,was:149,s:"2026-11-15",e:"2026-11-25",src:"hd3",q:"RYOBI PCL1200K2"},
+ {id:"hn6",store:"Home Depot",cat:"Tools",item:"Milwaukee M12 3/8\" ratchet, tool only (2457-20)",price:99,was:169,s:"2026-11-15",e:"2026-11-25",src:"hd3",q:"Milwaukee 2457-20"},
+ {id:"hn7",store:"Home Depot",cat:"Tools",item:"DEWALT 12\" double-bevel sliding miter saw (DWS780)",price:449,was:649,s:"2026-11-15",e:"2026-11-25",src:"hd3",q:"DEWALT DWS780"},
+ {id:"hn8",store:"Home Depot",cat:"Tools",item:"RYOBI USB Lithium screwdriver kit (FVD50K)",price:29.97,was:49.97,s:"2026-11-15",e:"2026-11-25",src:"hd3",q:"RYOBI FVD50K"},
+ {id:"hn9",store:"Home Depot",cat:"Tools",item:"Milwaukee M18 jobsite radio kit (2952-20)",price:299,was:539,s:"2026-11-15",e:"2026-11-25",src:"hd3",q:"Milwaukee 2952-20"},
+ {id:"hn10",store:"Home Depot",cat:"Tools",item:"DEWALT 20V MAX Bluetooth speaker, tool only (DCR010)",price:99,was:149,s:"2026-11-15",e:"2026-11-25",src:"hd3",q:"DEWALT DCR010"},
+ // Macy's
+ {id:"yn1",store:"Macy's",cat:"Toys & Kids",item:"Monster Jam tabletop foosball game",price:14.99,was:49.99,s:"2026-11-19",e:"2026-11-27",src:"macys3",q:"Monster Jam tabletop foosball"},
+ {id:"yn2",store:"Macy's",cat:"Toys & Kids",item:"Folding aluminum kick scooter",price:63.99,was:182.83,s:"2026-11-19",e:"2026-11-30",src:"macys3",q:"folding aluminum kick scooter"},
+ {id:"yn3",store:"Macy's",cat:"Toys & Kids",item:"LEGO Disney Princess advent calendar",price:35.99,was:44.99,s:"2026-11-19",e:"2026-12-01",src:"macys3",q:"LEGO Disney Princess advent calendar"},
+ {id:"yn4",store:"Macy's",cat:"Kitchen",item:"Chefman TurboFry Touch 2-qt air fryer",price:29.99,was:59.99,s:"2026-11-19",e:"2026-11-28",src:"macys3",q:"Chefman TurboFry Touch 2 qt"},
+ {id:"yn5",store:"Macy's",cat:"Clothing & Beauty",item:"Charter Club women's cashmere crewneck sweater",price:59.99,was:159,s:"2026-11-19",e:"2026-11-28",src:"macys3",q:"Charter Club cashmere crewneck sweater"},
+ {id:"yn6",store:"Macy's",cat:"Clothing & Beauty",item:"Alfani men's Chelsea boots",price:31.99,was:79.99,s:"2026-11-19",e:"2026-11-28",src:"macys3",q:"Alfani men's Chelsea boots"},
+ {id:"yn7",store:"Macy's",cat:"Home",item:"UGG Avery reversible throw",price:34.99,was:48,s:"2026-11-19",e:"2026-11-28",src:"macys3",q:"UGG Avery reversible throw"},
+ {id:"yn8",store:"Macy's",cat:"Home",item:"BLACK+DECKER PowerSeries Flex vacuum",price:27.99,was:59.99,s:"2026-11-19",e:"2026-11-28",src:"macys3",q:"Black Decker PowerSeries Flex vacuum"},
+ // Academy
+ {id:"cn1",store:"Academy",cat:"Sports & Outdoors",item:"Wilson NCAA Composite youth football",price:16.49,was:21.99,s:"2026-11-19",e:"2026-11-25",src:"academy2",q:"Wilson NCAA Composite youth football"},
+ {id:"cn2",store:"Academy",cat:"Sports & Outdoors",item:"Wilson NCAA Composite PeeWee football",price:16.49,was:21.99,s:"2026-11-19",e:"2026-11-25",src:"academy2",q:"Wilson NCAA Composite peewee football"},
+ {id:"cn3",store:"Academy",cat:"Sports & Outdoors",item:"Wilson NCAA Composite official-size football",price:16.49,was:21.99,s:"2026-11-19",e:"2026-11-25",src:"academy2",q:"Wilson NCAA Composite official football"},
+ {id:"cn4",store:"Academy",cat:"Sports & Outdoors",item:"Academy PeeWee composite football",price:9.99,was:12.99,s:"2026-11-19",e:"2026-11-25",src:"academy2",q:"peewee composite football"},
+ {id:"cn5",store:"Academy",cat:"Sports & Outdoors",item:"Wilson WNBA Fire basketball",price:9.99,was:16.99,s:"2026-11-19",e:"2026-11-25",src:"academy2",q:"Wilson WNBA Fire basketball"},
+ {id:"cn6",store:"Academy",cat:"Sports & Outdoors",item:"JOOLA Magnus Pro IV pickleball paddle",price:99.99,was:279.99,s:"2026-11-19",e:"2026-11-25",src:"academy2",q:"JOOLA Magnus Pro IV"},
+ // Tractor Supply (Black Friday ad, Nov 17–27)
+ {id:"tsc1",store:"Tractor Supply",cat:"Clothing & Beauty",item:"Blue Mountain men's plaid flannel shirt",price:9.99,was:24.99,s:"2026-11-17",e:"2026-11-27",src:"tsc",q:"Blue Mountain men's flannel shirt"},
+ {id:"tsc2",store:"Tractor Supply",cat:"Clothing & Beauty",item:"Carhartt men's Rugged Flex Rigby work pants",price:54.99,s:"2026-11-17",e:"2026-11-27",src:"tsc",q:"Carhartt Rugged Flex Rigby pants"},
+ {id:"tsc3",store:"Tractor Supply",cat:"Clothing & Beauty",item:"Carhartt women's Sawyer crewneck sweatshirt",price:22.5,s:"2026-11-17",e:"2026-11-27",src:"tsc",q:"Carhartt women's Sawyer crewneck sweatshirt"},
+ {id:"tsc4",store:"Tractor Supply",cat:"Clothing & Beauty",item:"Field & Stream men's Brooks performance camo hoodie",price:20.99,s:"2026-11-17",e:"2026-11-27",src:"tsc",q:"Field & Stream Brooks camo hoodie"},
+ {id:"tsc5",store:"Tractor Supply",cat:"Clothing & Beauty",item:"Ariat men's Rebar lightweight logo hoodie",price:27.49,s:"2026-11-17",e:"2026-11-27",src:"tsc",q:"Ariat Rebar hoodie"},
+ {id:"tsc6",store:"Tractor Supply",cat:"Tools",item:"DEWALT 20V MAX 5.0Ah battery starter kit",price:199,s:"2026-11-17",e:"2026-11-27",src:"tsc",q:"DEWALT 20V MAX 5.0Ah starter kit"},
+ {id:"tsc7",store:"Tractor Supply",cat:"Toys & Kids",item:"Coleman Powersports 196cc 2-seat go-kart",price:1499.99,s:"2026-11-17",e:"2026-11-27",src:"tsc",q:"Coleman Powersports 196cc go kart"},
+ // ---- Added Nov 19, 2026 (afternoon) ----
+ // Walmart early-deal prices (guide; many return in the Nov 23–29 event)
+ {id:"wn1",store:"Walmart",cat:"Tech",item:"Apple AirPods Pro 3",price:199,s:"2026-11-12",e:"2026-11-15",early:1,src:"walmart2",q:"Apple AirPods Pro 3"},
+ {id:"wn2",store:"Walmart",cat:"TV & Home Theater",item:"LG 65\" C6 Series 4K OLED TV",price:1399.99,s:"2026-11-12",e:"2026-11-15",early:1,src:"walmart2",q:"LG 65 inch C6 OLED"},
+ {id:"wn3",store:"Walmart",cat:"Toys & Kids",item:"LEGO Pokémon Pikachu and Poké Ball",price:159.95,s:"2026-11-12",e:"2026-11-15",early:1,src:"walmart2",q:"LEGO Pokemon Pikachu and Poke Ball"},
+ {id:"wn4",store:"Walmart",cat:"Kitchen",item:"Ninja Luxe Café Premier espresso & drip coffee maker",price:489,s:"2026-11-12",e:"2026-11-15",early:1,src:"walmart2",q:"Ninja Luxe Cafe Premier"},
+ {id:"wn5",store:"Walmart",cat:"Tech",item:"JBL Flip 6 waterproof speaker (camo)",price:79.95,s:"2026-11-12",e:"2026-11-15",early:1,src:"walmart2",q:"JBL Flip 6 camo"},
+ {id:"wn6",store:"Walmart",cat:"Tech",item:"Lenovo IdeaPad 5i 15.3\" 2-in-1 touchscreen laptop",price:729,s:"2026-11-12",e:"2026-11-15",early:1,src:"walmart2",q:"Lenovo IdeaPad 5i 2-in-1 15.3"},
+ // Tractor Supply (official Black Friday deals Nov 23–29)
+ {id:"tsn1",store:"Tractor Supply",cat:"Clothing & Beauty",item:"Carhartt men's loose-fit graphic hoodie",price:49.99,was:64.99,s:"2026-11-23",e:"2026-11-29",src:"tsc2",q:"Carhartt men's loose fit graphic hoodie"},
+ {id:"tsn2",store:"Tractor Supply",cat:"Clothing & Beauty",item:"Levi's clothing",deal:"As low as $25",s:"2026-11-23",e:"2026-11-29",src:"tsc2",q:"Levi's"},
+ {id:"tsn3",store:"Tractor Supply",cat:"Tools",item:"SKIL circular saws",deal:"From $59.99",s:"2026-11-23",e:"2026-11-29",src:"tsc2",q:"SKIL circular saw"},
+ {id:"tsn4",store:"Tractor Supply",cat:"Toys & Kids",item:"Powered ride-on toys",deal:"From $75.64",s:"2026-11-23",e:"2026-11-29",src:"tsc2",q:"ride on toy"},
+ {id:"tsn5",store:"Tractor Supply",cat:"Tools",item:"DEWALT outdoor power equipment",deal:"From $99.99",s:"2026-11-23",e:"2026-11-29",src:"tsc2",q:"DEWALT outdoor power equipment"},
+ {id:"tsn6",store:"Tractor Supply",cat:"Holiday",item:"Red Shed 44\" light-up cowboy gingerbread man",price:124.99,was:149.99,s:"2026-11-23",e:"2026-11-29",src:"tsc2",q:"Red Shed light up gingerbread man"},
+ {id:"tsn7",store:"Tractor Supply",cat:"Home",item:"Gun safes",deal:"From $349.99",s:"2026-11-23",e:"2026-11-29",src:"tsc2",q:"gun safe"},
+ // Macy's (Black Friday deals, more added Nov 19)
+ {id:"yn9",store:"Macy's",cat:"Toys & Kids",item:"Mattel UNO advent calendar",price:16.19,was:26.99,s:"2026-11-19",e:"2026-12-01",src:"macys3",q:"UNO advent calendar"},
+ {id:"yn10",store:"Macy's",cat:"Toys & Kids",item:"Kids' motorcycle ride-on",price:94.99,was:271.4,s:"2026-11-19",e:"2026-11-30",src:"macys3",q:"kids motorcycle ride on"},
+ {id:"yn11",store:"Macy's",cat:"Toys & Kids",item:"Convertible ride-on toy with trailer",price:65.98,was:164.95,s:"2026-11-19",e:"2026-11-30",src:"macys3",q:"ride on toy with trailer"},
+ {id:"yn12",store:"Macy's",cat:"Toys & Kids",item:"Rainbow Loom Design Station",price:11.17,was:39.99,s:"2026-11-19",e:"2026-11-27",src:"macys3",q:"Rainbow Loom Design Station"},
+ {id:"yn13",store:"Macy's",cat:"Toys & Kids",item:"Disney Princess Ready for the Ball Closet",price:15,was:42.99,s:"2026-11-19",e:"2026-11-27",src:"macys3",q:"Disney Princess Ready for the Ball Closet"},
+ {id:"yn14",store:"Macy's",cat:"Toys & Kids",item:"Barbie advent calendar",price:26.39,was:32.99,s:"2026-11-19",e:"2026-12-01",src:"macys3",q:"Barbie advent calendar"},
+ {id:"yn15",store:"Macy's",cat:"Toys & Kids",item:"Barbie Skate and Run Pup doll",price:14.99,was:26.99,s:"2026-11-19",e:"2026-11-21",src:"macys3",q:"Barbie Skate and Run Pup"},
+ {id:"yn16",store:"Macy's",cat:"Kitchen",item:"Coffee mug with warmer coaster",price:19.99,was:57.99,s:"2026-11-19",e:"2026-12-01",src:"macys3",q:"mug warmer"},
+ {id:"yn17",store:"Macy's",cat:"Home",item:"Macy's Santa Town 8-pc comforter set",price:32.99,was:100,s:"2026-11-19",e:"2026-11-28",src:"macys3",q:"Santa Town comforter set"},
+ {id:"yn18",store:"Macy's",cat:"Home",item:"Cozy sherpa throw",price:8.99,was:30,s:"2026-11-19",e:"2026-11-28",src:"macys3",q:"cozy sherpa throw"},
+ {id:"yn19",store:"Macy's",cat:"Clothing & Beauty",item:"Nike cushioned crew socks, 6 pairs",price:13.2,was:22,s:"2026-11-19",e:"2026-12-02",src:"macys3",q:"Nike cushioned crew socks 6 pack"},
+ {id:"yn20",store:"Macy's",cat:"Clothing & Beauty",item:"Carter's baby sherpa 3-piece set",price:15.2,was:38,s:"2026-11-19",e:"2026-11-28",src:"macys3",q:"Carter's baby sherpa 3 piece set"},
+ {id:"yn21",store:"Macy's",cat:"Clothing & Beauty",item:"Toddler character beanie & mitten set",price:10,was:25,s:"2026-11-19",e:"2026-12-01",src:"macys3",q:"toddler beanie mitten set"},
 ];
 
 const DATES = [
  {store:"Amazon",lines:["Black Friday Week + Cyber Monday: Nov 19–30","Starts 12:01 a.m. PT Nov 19; extra deal drops on Black Friday and Cyber Monday","Holiday returns: items bought Nov 1–Dec 31 can go back through Jan 31"],src:["Amazon","https://www.aboutamazon.com/md/news/retail/amazon-black-friday-cyber-monday-deals-2026"]},
- {store:"Best Buy",lines:["Black Friday sale: Nov 19–28 (new doorbusters weekly)","Cyber Monday sale: Nov 29–30","Last-minute event: Dec 18–24"],src:["MacRumors","https://macrumors.com/2026/11/06/best-buy-reveals-black-friday-2/"]},
+ {store:"Best Buy",lines:["Black Friday Doorbusters: Nov 19–29 (10 days)","Thanksgiving 24-hour online flash sale (stores closed)","Black Friday hours 6 a.m.–10 p.m.; My Best Buy members can buy a $100 gift card for $60 in store (while supplies last)","Cyber Sunday & Monday sale: Nov 29–30; Cyber Week deals Dec 1–6","Last-minute event: Dec 18–24"],src:["Best Buy press release","https://www.businesswire.com/news/home/20261117642101/en/Best-Buys-Black-Friday-sale-begins-Nov.-19"]},
  {store:"Walmart",lines:["Early deals ran Nov 12–15","Black Friday Deals: Nov 23–29 (online 12:01 a.m. ET)","Cyber Monday Deals: Nov 30–Dec 2"],src:["Hip2Save","https://hip2save.com/?p=10962155"]},
  {store:"Target",lines:["Early Black Friday deals online from Nov 18","Black Friday Week: Nov 22–29 (Circle 360 early access Nov 25, 2 a.m. CT)","Black Friday weekend deals Nov 26–29; closed Thanksgiving, opens 6 a.m. Nov 27","First 100 guests per store on Black Friday get a $25–$100 gift card","Holiday Price Match Guarantee through Dec 24"],src:["Target press release","https://corporate.target.com/press/release/2026/11/target-announces-black-friday-deals-and-giveaways-to-help-families-save-big-on-gifts-they-ll-love-to"]},
  {store:"Costco",lines:["Round 2 deals: Nov 16–30; some items start Nov 19–20","Cyber Monday (Nov 30) deals online only","Thanksgiving deals online only (warehouses closed); Black Friday weekend Nov 27–30","Prices here are from a leaked ad"],src:["Costco97","https://costco97.com/?p=76048"]},
@@ -954,6 +1069,7 @@ const DATES = [
  {store:"JCPenney",lines:["Black Friday pricing: Nov 20–29","Closed Thanksgiving; opens 5 a.m. Black Friday with giveaways at 5 a.m., 9 a.m., 1 p.m. and 5 p.m.","Price Lock on seasonal must-haves Dec 1–25","Nearest: Castleton Square, Indianapolis"],src:["Find Subscription Boxes","https://www.findsubscriptionboxes.com/subscription-box-news/jcpenney-black-friday-2026/"]},
  {store:"Menards",lines:["Early Black Friday deals now: up to 70% off plus an extra 11% mail-in rebate on listed items","Black Friday ad posts Nov 25; sale runs Nov 27–29","Closed Thanksgiving; Black Friday deals start 6 a.m. Nov 27 (in-store only that day), online and in-store Nov 28–29","No Cyber Monday sale","Nearest: E 42nd St and S Emerson Ave, Indianapolis"],src:["Krazy Coupon Lady","https://thekrazycouponlady.com/tips/money/menards-black-friday"]},
  {store:"HOKA",lines:["2026 Black Friday sale not announced yet","Dick's has 20% off the HOKA Bondi 9 now through Dec 5"],src:["ShopBack","https://www.shopback.com/blog/fashion/hoka-have-sales-running-shoes"]},
+ {store:"Tractor Supply",lines:["Black Friday ad prices: Nov 17–27","Official Black Friday deals: Nov 23–29 (Neighbor's Club early access to select offers Nov 21)","Closed Thanksgiving; opens 6 a.m. Black Friday","Nearest: 1645 N State St, Greenfield"],src:["Hip2Save","https://hip2save.com/tips/tractor-supply-black-friday/"]},
 ];
 
 const BF = new Date("2026-11-27T00:00:00");
@@ -1013,7 +1129,8 @@ const SEARCH = {
   "Home Depot":"https://www.homedepot.com/s/",
   "Macy's":"https://www.macys.com/shop/search?keyword=",
   "JCPenney":"https://www.jcpenney.com/s?searchTerm=",
-  "Menards":"https://www.menards.com/main/search.html?search="
+  "Menards":"https://www.menards.com/main/search.html?search=",
+  "Tractor Supply":"https://www.tractorsupply.com/tsc/search/"
 };
 function shopUrl(d){
   if(d.url) return d.url;
@@ -1067,11 +1184,10 @@ function renderDates(){
   $("#datesBody").innerHTML=`<div class="count" style="background:var(--soft);color:var(--green);margin-top:14px">Black Friday is <b style="color:var(--red)">Fri, Nov 27</b> · Cyber Monday Nov 30</div>`+
   DATES.map(s=>`<div class="st"><h4><span class="store" style="background:${(STORES[s.store]||STORES.Other).c}">${esc(s.store)}</span></h4>
     <ul>${s.lines.map(l=>`<li>${esc(l)}</li>`).join("")}</ul>
-    <div class="src"><a href="${s.src[1]}" target="_blank" rel="noopener">Source: ${esc(s.src[0])}</a></div></div>`).join("")+
-  `<p class="note">Also within 25 miles of New Palestine, but no 2026 Black Friday deals published yet: Tractor Supply (Greenfield).</p>`;
+    <div class="src"><a href="${s.src[1]}" target="_blank" rel="noopener">Source: ${esc(s.src[0])}</a></div></div>`).join("");
 }
 function renderSources(){
-  const names={walmart:"GMA (Walmart)",bestbuy:"9to5Google (Best Buy)",costco:"Costco97 (Costco leak)",amazon:"Amazon",dicks:"DICK'S press release",lowes:"Hunker (Lowe's)",meijer:"Siliconera (Meijer)",meijerweb:"Meijer.com",sams:"Slickdeals (Sam's Club)",hf:"Slickdeals (Harbor Freight)",hd:"Visualping (Home Depot)",targettoys:"Target (Top Toys list)",targetprices:"The Freebie Guy (Target toy prices)",amazontoys:"Amazon (Top Toys list)",target:"Target press release",targetmr:"MacRumors (Target)",kohls:"Pirates & Princesses (Kohl's)",macys:"Pirates & Princesses (Macy's)",jcp:"Find Subscription Boxes (JCPenney)",amazon2:"TechRadar (Amazon)",costco2:"Pirates & Princesses (Costco round 2)",academy:"Academy.com",lowes2:"TAG24 (Lowe's)",lowes3:"Yahoo Shopping (Lowe's)",lowes4:"House Digest (Lowe's)",costco3:"Southern Savers (full Costco ad)",sams2:"Krazy Coupon Lady (Sam's Club)",hd2:"Home Depot Helper",amazon3:"9to5Toys (Amazon Apple deals)",targettoday:"TODAY (Target)",bestbuy2:"Pirates & Princesses (Best Buy)",bestbuy3:"MacRumors (Best Buy)",macys2:"Visualping (Macy's)",menards:"dealnews (Menards)"};
+  const names={walmart:"GMA (Walmart)",bestbuy:"9to5Google (Best Buy)",costco:"Costco97 (Costco leak)",amazon:"Amazon",dicks:"DICK'S press release",lowes:"Hunker (Lowe's)",meijer:"Siliconera (Meijer)",meijerweb:"Meijer.com",sams:"Slickdeals (Sam's Club)",hf:"Slickdeals (Harbor Freight)",hd:"Visualping (Home Depot)",targettoys:"Target (Top Toys list)",targetprices:"The Freebie Guy (Target toy prices)",amazontoys:"Amazon (Top Toys list)",target:"Target press release",targetmr:"MacRumors (Target)",kohls:"Pirates & Princesses (Kohl's)",macys:"Pirates & Princesses (Macy's)",jcp:"Find Subscription Boxes (JCPenney)",amazon2:"TechRadar (Amazon)",costco2:"Pirates & Princesses (Costco round 2)",academy:"Academy.com",lowes2:"TAG24 (Lowe's)",lowes3:"Yahoo Shopping (Lowe's)",lowes4:"House Digest (Lowe's)",costco3:"Southern Savers (full Costco ad)",sams2:"Krazy Coupon Lady (Sam's Club)",hd2:"Home Depot Helper",amazon3:"9to5Toys (Amazon Apple deals)",targettoday:"TODAY (Target)",bestbuy2:"Pirates & Princesses (Best Buy)",bestbuy3:"MacRumors (Best Buy)",macys2:"Visualping (Macy's)",menards:"dealnews (Menards)",bestbuy4:"Best Buy press release (Nov 17)",amazon4:"9to5Toys (Amazon Black Friday)",amazon5:"Tom's Guide (Amazon live)",amazon6:"Popular Science (Amazon deals)",amazon7:"9to5Toys (Amazon devices)",hd3:"Bob Vila (Home Depot tools)",macys3:"Krazy Coupon Lady (Macy's)",academy2:"Academy.com (sports deals)",tsc:"Katalozi365 (Tractor Supply ad)",tsc2:"Hip2Save (Tractor Supply)",walmart2:"Yahoo Shopping (Walmart early deals)"};
   $("#srcList").innerHTML="Sources: "+Object.keys(SRC).map(k=>`<a href="${SRC[k]}" target="_blank" rel="noopener">${esc(names[k]||k)}</a>`).join(" · ");
 }
 

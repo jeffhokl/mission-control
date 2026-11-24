@@ -189,7 +189,7 @@ a.card:hover{box-shadow:0 6px 18px rgba(20,87,58,.16);transform:translateY(-1px)
       <div class="chips" id="statusChips"></div>
     </div>
     <div class="grid" id="dealGrid"></div>
-    <p class="note">Prices come from published ads, retailer announcements and deal-site reports gathered Nov 19, 2026, updated Nov 23 (Amazon's Black Friday Week and Best Buy's doorbusters started today; Tractor Supply's ad added). Every 2026 Black Friday and Cyber Monday ad item published as text is listed, including the full leaked Costco ad. Target, Kohl's, Meijer and Best Buy ads are mostly image scans, so items that haven't been published as text aren't listed yet; Walmart hasn't released main-event prices yet, and Menards' Black Friday ad posts Nov 25. Local stores within 25 miles of New Palestine are included. Toy book items show regular prices, not sale prices; watch for those toys in Black Friday ads. A few Target toys don't have a published price yet. Costco prices are from a leaked ad. Amazon and Target prices from Nov 18 are early deals and may change when the main events start. Walmart's Nov 12–15 early prices are kept as a guide because many come back in the Nov 23–29 event. Always confirm the price before you buy. Tapping a deal opens a search for it on that store's site.</p>
+    <p class="note">Prices come from published ads, retailer announcements and deal-site reports gathered Nov 19, 2026, updated Nov 24 (Amazon's Black Friday Week and Best Buy's doorbusters started today; Tractor Supply's ad added). Every 2026 Black Friday and Cyber Monday ad item published as text is listed, including the full leaked Costco ad. Target, Kohl's, Meijer and Best Buy ads are mostly image scans, so items that haven't been published as text aren't listed yet; Walmart hasn't released main-event prices yet, and Menards' Black Friday ad posts Nov 25. Local stores within 25 miles of New Palestine are included. Toy book items show regular prices, not sale prices; watch for those toys in Black Friday ads. A few Target toys don't have a published price yet. Costco prices are from a leaked ad. Amazon and Target prices from Nov 18 are early deals and may change when the main events start. Walmart's Nov 12–15 early prices are kept as a guide because many come back in the Nov 23–29 event. Always confirm the price before you buy. Tapping a deal opens a search for it on that store's site.</p>
     <p class="note" id="srcList"></p>
     <p class="xfoot">🎄 Merry Christmas from Mission Control 🎅</p>
   </section>
@@ -282,6 +282,17 @@ const SRC = {
   kohls4:"https://hip2save.com/deals/kohls-black-friday/",
   macys6:"https://hip2save.com/deals/macys-black-friday/",
   hd7:"https://www.housedigest.com/2316930/early-black-friday-deals-2026-home-depot-tools-appliances/",
+  walmart1:"https://www.macrumors.com/roundup/black-friday/",
+  bestbuy1:"https://www.bestbuy.com/site/6690891.p",
+  bestbuy7:"https://www.passionforsavings.com/?p=338313",
+  bestbuy8:"https://www.techradar.com/live/news/nintendo-switch-black-friday-2026-nov-23",
+  dicks1:"https://hip2save.com/?p=10970697",
+  academy1:"https://www.academy.com/c/hot-deals/hot-deals-on-sports-gear/baseball-deals/baseball-gloves-deals",
+  academy4:"https://weeklyadhunters.com/academy-black-friday-deals-ad/",
+  kohls1:"https://passionatepennypincher.com/best-kohls-black-friday-deals/",
+  samsclub1:"https://hip2save.com/tips/sams-club-black-friday",
+  lowes1:"https://hip2save.com/deals/lowes-black-friday/",
+  homedepo1:"https://thekrazycouponlady.com/coupons-for/home-depot/black-friday",
 };
 // s = start, e = end (inclusive, YYYY-MM-DD). leak = from leaked ad. early = early-event price
 const DEALS = [
@@ -1170,6 +1181,31 @@ const DEALS = [
  {id:"nw22",store:"Home Depot",cat:"Tools",item:"Husky 310-pc SAE/metric mechanics tool set",price:99,was:199,s:"2026-11-05",e:"2026-12-02",src:"hd7",q:"Husky 310-pc SAE/metric mechanics tool set"},
  {id:"nw23",store:"Home Depot",cat:"Tools",item:"RIDGID 18V 2-tool combo kit (drill/driver + impact driver)",price:99,was:159,s:"2026-11-05",e:"2026-12-02",src:"hd7",q:"RIDGID 18V 2-tool combo kit (drill/driver + impact driver)"},
  {id:"nw24",store:"Harbor Freight",cat:"Tools",item:"PITTSBURGH 9-pc combination wrench set",price:7.99,was:9.99,s:"2026-11-17",e:"2026-11-25",src:"hf3",q:"PITTSBURGH 9-pc combination wrench set"},
+ // ---- Added Nov 24, 2026 ----
+ {id:"nx1",store:"Walmart",cat:"Toys & Kids",item:"Hot Wheels Monster Trucks Neon Smashers 9-pack",price:15,was:29.99,s:"2026-11-24",e:"2026-11-29",src:"walmart5",q:"Hot Wheels Monster Trucks Neon Smashers 9-pack"},
+ {id:"nx2",store:"Walmart",cat:"Tech",item:"Beats Studio Pro wireless headphones",price:99,was:299,s:"2026-11-24",e:"2026-11-29",src:"walmart5",q:"Beats Studio Pro wireless headphones"},
+ {id:"nx3",store:"Walmart",cat:"Kitchen",item:"Blackstone pre-seasoned outdoor griddle",price:150,was:224,s:"2026-11-24",e:"2026-11-29",src:"walmart5",q:"Blackstone pre-seasoned outdoor griddle"},
+ {id:"nx4",store:"Walmart",cat:"Tech",item:"Apple AirPods 5",price:129,s:"2026-11-23",e:"2026-11-29",src:"walmart1",q:"Apple AirPods 5"},
+ {id:"nx5",store:"Best Buy",cat:"Toys & Kids",item:"Amazon Kids Tablet 8 (2026), ages 6+",price:149.99,was:229.99,s:"2026-11-22",e:"2026-11-28",src:"bestbuy1",q:"Amazon Kids Tablet 8 (2026), ages 6+"},
+ {id:"nx6",store:"Best Buy",cat:"TV & Home Theater",item:"Samsung 65\" U8000H Crystal UHD 4K TV",price:299.99,s:"2026-11-22",e:"2026-11-28",src:"bestbuy7",q:"Samsung 65\" U8000H Crystal UHD 4K TV"},
+ {id:"nx7",store:"Best Buy",cat:"TV & Home Theater",item:"TCL 65\" QM6K 4K Mini LED TV",price:599.99,was:999.99,s:"2026-11-23",e:"2026-11-28",src:"bestbuy8",q:"TCL 65\" QM6K 4K Mini LED TV"},
+ {id:"nx8",store:"Best Buy",cat:"Toys & Kids",item:"2025 Panini Mosaic Football Fat Pack (trading cards)",price:9.99,s:"2026-11-22",e:"2026-11-28",src:"bestbuy7",q:"2025 Panini Mosaic Football Fat Pack (trading cards)"},
+ {id:"nx9",store:"Dick's",cat:"Clothing & Beauty",item:"Kids' shoes (select styles)",deal:"As low as $18.97",s:"2026-11-22",e:"2026-12-05",src:"dicks1",q:"Kids' shoes (select styles)"},
+ {id:"nx10",store:"Dick's",cat:"Clothing & Beauty",item:"Kids' clothing (select styles)",deal:"As low as $8.97",s:"2026-11-22",e:"2026-12-05",src:"dicks1",q:"Kids' clothing (select styles)"},
+ {id:"nx11",store:"Academy",cat:"Sports & Outdoors",item:"Wilson 11\" Youth A1000 PF11 infield baseball glove",price:89.99,was:179.99,s:"2026-11-24",e:"2026-11-28",src:"academy1",q:"Wilson 11\" Youth A1000 PF11 infield baseball glove"},
+ {id:"nx12",store:"Academy",cat:"Toys & Kids",item:"GOTRAX Kids' Scout 2.0 electric scooter",price:99.99,s:"2026-11-26",e:"2026-11-28",src:"academy4",q:"GOTRAX Kids' Scout 2.0 electric scooter"},
+ {id:"nx13",store:"Kohl's",cat:"Kitchen",item:"Ninja SLUSHi 80-oz frozen drink maker (+$60 Kohl's Cash)",price:229.99,was:329,s:"2026-11-22",e:"2026-11-30",src:"kohls1",q:"Ninja SLUSHi 80-oz frozen drink maker (+$60 Kohl's Cash)"},
+ {id:"nx14",store:"Kohl's",cat:"Toys & Kids",item:"Potato Head Super Spud interactive toy set",price:19.99,was:39.99,s:"2026-11-22",e:"2026-11-30",src:"kohls1",q:"Potato Head Super Spud interactive toy set"},
+ {id:"nx15",store:"Sam's Club",cat:"Toys & Kids",item:"Nikko 1:12 Pro Trucks Toyota Gazoo Dakar RC truck",price:24.98,was:39.98,s:"2026-11-24",e:"2026-11-29",src:"samsclub1",q:"Nikko 1:12 Pro Trucks Toyota Gazoo Dakar RC truck"},
+ {id:"nx16",store:"Sam's Club",cat:"Toys & Kids",item:"Member's Mark wooden tabletop BBQ playset",price:39.98,was:59.98,s:"2026-11-24",e:"2026-11-29",src:"samsclub1",q:"Member's Mark wooden tabletop BBQ playset"},
+ {id:"nx17",store:"Sam's Club",cat:"Tech",item:"Bose QuietComfort wireless headphones",price:169,was:329,s:"2026-11-24",e:"2026-11-29",src:"samsclub1",q:"Bose QuietComfort wireless headphones"},
+ {id:"nx18",store:"Sam's Club",cat:"Clothing & Beauty",item:"Character slippers for the family (Grinch, Bluey, Hello Kitty)",deal:"30% off",s:"2026-11-26",e:"2026-11-29",src:"samsclub1",q:"Character slippers for the family (Grinch, Bluey, Hello Kitty)"},
+ {id:"nx19",store:"Lowe's",cat:"Tools",item:"Kobalt 4V MAX 1/4-in cordless screwdriver",price:19.98,was:27.98,s:"2026-11-24",e:"2026-12-30",src:"lowes1",q:"Kobalt 4V MAX 1/4-in cordless screwdriver"},
+ {id:"nx20",store:"Lowe's",cat:"Holiday",item:"Holiday Living 7-ft Greensboro pencil pre-lit Christmas tree",price:67.49,was:89.98,s:"2026-11-24",e:"2026-12-02",src:"lowes1",q:"Holiday Living 7-ft Greensboro pencil pre-lit Christmas tree"},
+ {id:"nx21",store:"JCPenney",cat:"Clothing & Beauty",item:"Men's flannel shirts",deal:"As low as $11.99",s:"2026-11-20",e:"2026-11-29",src:"jcp2",q:"Men's flannel shirts"},
+ {id:"nx22",store:"Home Depot",cat:"Home",item:"Shark PowerPro cordless HEPA stick vacuum",price:179,was:329,s:"2026-11-05",e:"2026-11-25",src:"homedepo1",q:"Shark PowerPro cordless HEPA stick vacuum"},
+ {id:"nx23",store:"Home Depot",cat:"Tech",item:"Ring Battery Doorbell 2K + Indoor Cam Plus 2K bundle",price:59.99,was:139.99,s:"2026-11-05",e:"2026-11-25",src:"homedepo1",q:"Ring Battery Doorbell 2K + Indoor Cam Plus 2K bundle"},
+ {id:"nx24",store:"Home Depot",cat:"Tools",item:"Milwaukee M12/M18 cordless ratchet & impact wrench kit",price:299,was:499,s:"2026-11-05",e:"2026-11-27",src:"homedepo1",q:"Milwaukee M12/M18 cordless ratchet & impact wrench kit"},
 ];
 
 const DATES = [
@@ -1308,6 +1344,7 @@ const PHOTO_URLS = {
   cx157:"https://i5.walmartimages.com/seo/Wrangler-Authentics-Men-s-Classic-5-Pocket-Regular-Fit-Cotton-Jean-Storm-35W-x-32L_561545ee-e632-482b-9f17-7b8d3081104e.1225028bad6ed0c813034f9b403ef73f.jpeg",
   cx181:"https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/6680fccb-8ccc-4c66-9c1b-0138f5f84a91/Refrigerator_LF29S8330S_gallery_01_5000x5000?io=transform:fill,width:1536",
   cx198:"https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5bf12e2f-37bd-42c4-9b60-76b0268a9fe5.jpg;maxHeight=1920;maxWidth=900?format=webp",
+  cx58:"https://www.rei.com/media/e750497d-39b6-430e-abf2-8dcdcd6ee9a2.jpg?size=784x588",
   cx92:"https://i5.walmartimages.com/seo/Lenovo-Legion-5a-15-3-WQXGA-Laptop-Ryzen-7-250-1-6GB-1TB-NVIDIA-GeForce-RTX-5060-83Q70003US_e80bebe5-54ef-493b-9279-30b80bf418c4.7f12718d5f45e24a48da9bc53d2f8f44.jpeg",
   dk1:"https://academy.scene7.com/is/image/academy/21559719?$pdp-gallery-ng$",
   dx10:"https://images.thdstatic.com/productImages/5c3eb1b6-cbaa-4523-8ccf-52e122a6a181/svn/fingerprint-resistant-black-stainless-steel-samsung-french-door-refrigerators-rf27t5201sg-64_1000.jpg",
@@ -1393,7 +1430,9 @@ const PHOTO_URLS = {
   nw16:"https://hip2save.com/wp-content/uploads/2026/11/tractor-supply-1-e1795430365132.jpg?w=912&resize=912%2C412&strip=all",
   nw17:"https://hip2save.com/wp-content/uploads/2024/07/Shark-Rotator-Professional-Lift-Away-Vacuum2.jpg?w=912&resize=912%2C684&strip=all",
   nw18:"https://hip2save.com/wp-content/uploads/2026/11/macys-flannel-cashmere.jpg?w=912&resize=912%2C684&strip=all",
+  nw19:"https://hip2save.com/wp-content/uploads/2022/11/cook-mixer-with-food-around-it-.jpg",
   nw2:"https://hip2save.com/wp-content/uploads/2026/11/walmart-black-friday-deals-5.jpg",
+  nw20:"https://media.kohlsimg.com/is/image/kohls/2385336_Gray?wid=1000&hei=1000&op_sharpen=1",
   nw21:"https://content-images.thekrazycouponlady.com/nie44ndm9bqr/6jlJR0a703vPyZF1R63Qwf/25d7110c670a1e2873cca6ab9d4817ac/JCP_Black_Friday_Ad_Drop_2026.png",
   nw22:"https://www.housedigest.com/img/gallery/14-early-black-friday-2026-deals-on-tools-appliances-at-home-depot/a-handy-kit-for-a-diy-mechanic-growing-their-collection-1794690865.jpg",
   nw23:"https://www.housedigest.com/img/gallery/14-early-black-friday-2026-deals-on-tools-appliances-at-home-depot/a-powerful-drill-and-impact-driver-combo-kit-with-led-lights-1794690872.jpg",
@@ -1405,6 +1444,22 @@ const PHOTO_URLS = {
   nw7:"https://media-cldnry.s-nbcnews.com/image/upload/t_fit-320w,f_avif,q_auto:best/rockcms/2026-09/AMAZON-Fanttik-E1-Max-Electric-Screwdriver-53-in-1-Screwdriver-for-DIY-Grey-cc06cb.jpg",
   nw8:"https://pisces.bbystatic.com/image2/BestBuy_US/images/products/edf4f212-d89d-43fc-aa3c-6038e0fd2a43.jpg;maxHeight=1920;maxWidth=900?format=webp",
   nw9:"https://media.gamestop.com/i/gamestop/20032457-680826cd?w=768&h=768&fmt=auto",
+  nx1:"https://hip2save.com/wp-content/uploads/2026/11/walmart-2.jpg?w=912&resize=912%2C380&strip=all",
+  nx10:"https://hip2save.com/wp-content/uploads/2026/11/dicks-BF-clothing-2-e1795346381852.jpg?w=912&resize=912%2C472&strip=all",
+  nx11:"https://academy.scene7.com/is/image/academy/21307533?$d-plp-product-image$",
+  nx14:"https://media.kohlsimg.com/is/image/kohls/7680839?wid=800&hei=800&op_sharpen=1",
+  nx15:"https://hip2save.com/wp-content/uploads/2026/11/Nikko-1_12-Pro-Trucks-Toyota-Gazoo-Dakar-RC-Car-Toy.jpg?w=912&resize=912%2C479&strip=all",
+  nx16:"https://hip2save.com/wp-content/uploads/2026/11/Kids-play-grill.jpg?w=912&resize=912%2C684&strip=all",
+  nx17:"https://hip2save.com/wp-content/uploads/2026/11/bose-headphones-1.jpg?w=912&resize=912%2C684&strip=all",
+  nx19:"https://hip2save.com/wp-content/uploads/2026/11/Lowes-Black-friday-10-e1794253156394.jpg",
+  nx2:"https://hip2save.com/wp-content/uploads/2026/11/walmart-1.jpg?w=912&resize=912%2C494&strip=all",
+  nx20:"https://hip2save.com/wp-content/uploads/2026/11/werner-ladder-holiday-living-christmas-tree-e1793895895846.jpg",
+  nx22:"https://cdn.homecrux.com/wp-content/uploads/2026/11/Shark-PowerPro-Cordless-HEPA-Filter-Portable-Stick-Vacuum.jpg",
+  nx3:"https://hip2save.com/wp-content/uploads/2026/11/walmart-black-friday-deals-4.jpg?w=912&resize=912%2C416&strip=all",
+  nx5:"https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4c422d75-6a03-44ae-baa8-ac76e50072eb.jpg;maxHeight=1920;maxWidth=900?format=webp",
+  nx6:"https://images.samsung.com/is/image/samsung/p6pim/us/un50u8000hfxza/gallery/us-uhd-u8000h-un50u8000hfxza-551364503?$product-details-jpg$",
+  nx7:"https://cdn.mos.cms.futurecdn.net/JUdQU2zpPsF8NxBXw9nD2P.jpg",
+  nx9:"https://hip2save.com/wp-content/uploads/2026/11/dicks-BF-shoes.jpg?w=912&resize=912%2C513&strip=all",
   ox1:"https://media.kohlsimg.com/is/image/kohls/8432999?wid=1000&hei=1000&op_sharpen=1",
   ox10:"https://media.kohlsimg.com/is/image/kohls/6907255?wid=1000&hei=1000&op_sharpen=1",
   ox11:"https://media.kohlsimg.com/is/image/kohls/7731721?wid=1000&hei=1000&op_sharpen=1",
@@ -1450,7 +1505,9 @@ const PHOTO_URLS = {
   tsn6:"https://media.tractorsupply.com/is/image/TractorSupplyCompany/6059070?wid=554&hei=554&qlt=90&fmt=jpeg&resMode=sharp2&op_usm=0.9,1.0,8,0",
   tsn7:"https://media.tractorsupply.com/is/image/TractorSupplyCompany/1617618?wid=554&hei=554&qlt=90&fmt=jpeg&resMode=sharp2&op_usm=0.9,1.0,8,0",
   tt2:"https://shop.mattel.com/cdn/shop/files/45666fe9fc826b32a1579c92b8b044a8297ad77f.jpg?v=1795195242",
+  tt28:"https://dsom-imager-prod.shipt.com/90018226-27/bcbef2ee-65c5-4200-a82b-f812897a13ab.jpeg",
   tt5:"https://faoschwarz.com/cdn/shop/files/xp-main-my-fao-doll-fair-skin-with-light-blue-eyes.png?v=1792167234&width=2048",
+  tt7:"https://image.smythstoys.com/original/800/desktop/258969.jpg",
   tx14:"https://i5.walmartimages.com/seo/Mattel-UNO-Original-Card-Game-America-s-No-1-Family-Game-500-Points-Color-Coded_ec570db9-591c-4fee-967a-17a021c3004f.668b785379bf034c72f12a6a3142d69b.jpeg",
   tx15:"https://i5.walmartimages.com/seo/Nintendo-Switch-2-System_e54b513c-cf10-44a5-8a78-14a5f70644a8.dca71e01a5172a18dbc2bc689f959469.jpeg",
   tx16:"https://multimedia.bbycastatic.ca/multimedia/products/500x500/179/17902/17902797.jpg",
@@ -1478,6 +1535,7 @@ const PHOTO_URLS = {
   wn6:"https://i5.walmartimages.com/seo/Lenovo-IdeaPad-5i-15-3-Touchscreen-2-in-1-Laptop-Intel-Core-Ultra-5-16GB-Ram-512GB-SSD-Luna-Grey-3-Months-of-Microsoft-365-Personal-included_a231f0a4-379d-4070-9fff-f6da7cbe067a.61489563b073d10b81efe38aa933959c.jpeg",
   yn10:"https://slimages.macysassets.com/is/image/MCY/products/5/optimized/29785385_fpx.tif?$filterlrg$&wid=327",
   yn11:"https://pisces.bbystatic.com/image2/BestBuy_US/images/products/d0ed2651-0147-4579-8e39-aa610e5a9eb8.jpg;maxHeight=1920;maxWidth=900?format=webp",
+  yn12:"https://myhappyhelpers.com.au/cdn/shop/files/356_4b7cae43-7129-4382-ba3e-82543bdfadeb.png?crop=center&height=1200&v=1779259624&width=1200",
   yn13:"https://www.maziply.com/cdn/shop/files/disney-princess-ready-for-the-ball-closet-playset.webp?v=1753774219&width=1600",
   yn14:"https://i5.walmartimages.com/seo/Barbie-Advent-Calendar-with-Barbie-Doll-24-Surprises-Kids-3-to-7-Years-Old_df358be1-99b3-4b7b-8bb1-24b5a05eeef2.0521a4184286bb20cab02de669334ab2.jpeg",
   yn15:"https://media.kohlsimg.com/is/image/kohls/8482337?wid=1000&hei=1000&op_sharpen=1",
@@ -1576,7 +1634,7 @@ function renderDates(){
     <div class="src"><a href="${s.src[1]}" target="_blank" rel="noopener">Source: ${esc(s.src[0])}</a></div></div>`).join("");
 }
 function renderSources(){
-  const names={walmart:"GMA (Walmart)",bestbuy:"9to5Google (Best Buy)",costco:"Costco97 (Costco leak)",amazon:"Amazon",dicks:"DICK'S press release",lowes:"Hunker (Lowe's)",meijer:"Siliconera (Meijer)",meijerweb:"Meijer.com",sams:"Slickdeals (Sam's Club)",hf:"Slickdeals (Harbor Freight)",hd:"Visualping (Home Depot)",targettoys:"Target (Top Toys list)",targetprices:"The Freebie Guy (Target toy prices)",amazontoys:"Amazon (Top Toys list)",target:"Target press release",targetmr:"MacRumors (Target)",kohls:"Pirates & Princesses (Kohl's)",macys:"Pirates & Princesses (Macy's)",jcp:"Find Subscription Boxes (JCPenney)",amazon2:"TechRadar (Amazon)",costco2:"Pirates & Princesses (Costco round 2)",academy:"Academy.com",lowes2:"TAG24 (Lowe's)",lowes3:"Yahoo Shopping (Lowe's)",lowes4:"House Digest (Lowe's)",costco3:"Southern Savers (full Costco ad)",sams2:"Krazy Coupon Lady (Sam's Club)",hd2:"Home Depot Helper",amazon3:"9to5Toys (Amazon Apple deals)",targettoday:"TODAY (Target)",bestbuy2:"Pirates & Princesses (Best Buy)",bestbuy3:"MacRumors (Best Buy)",macys2:"Visualping (Macy's)",menards:"dealnews (Menards)",bestbuy4:"Best Buy press release (Nov 17)",amazon4:"9to5Toys (Amazon Black Friday)",amazon5:"Tom's Guide (Amazon live)",amazon6:"Popular Science (Amazon deals)",amazon7:"9to5Toys (Amazon devices)",hd3:"Bob Vila (Home Depot tools)",macys3:"Krazy Coupon Lady (Macy's)",academy2:"Academy.com (sports deals)",tsc:"Katalozi365 (Tractor Supply ad)",tsc2:"Hip2Save (Tractor Supply)",walmart2:"Yahoo Shopping (Walmart early deals)",amazon8:"Tom's Guide (Amazon LEGO)",hoka2:"Tom's Guide (HOKA sale)",jcp2:"Krazy Coupon Lady (JCPenney)",walmart3:"BestReviews (Walmart)",lowes5:"Bob Vila (Lowe's tools)",kohls2:"Good Morning America (Kohl's)",target2:"Digital Citizen (Target dates)",hd6:"Hunker (Home Depot)",hf3:"SlashGear (Harbor Freight)",jcp3:"The Freebie Guy (JCPenney)",macys5:"Macy's Black Friday guide",walmart4:"Yahoo Shopping (Walmart Black Friday)",bestbuy5:"Best Buy Corporate News",bestbuy6:"9to5Toys (Best Buy)",dicks3:"The Freebie Guy (Dick's)",amazon9:"Washington Times (retailer list)",walmart5:"Hip2Save (Walmart Black Friday)",gamesradar1:"GamesRadar+ (gaming deals)",today1:"TODAY (Amazon early deals)",macworld1:"Macworld (Apple deals)",target3:"Siliconera (Target ad)",academy3:"Hip2Save (Academy ad)",kohls3:"Hip2Save (Kohl's The Big One)",kohls4:"Hip2Save (Kohl's Black Friday)",macys6:"Hip2Save (Macy's Black Friday)",hd7:"House Digest (Home Depot)"};
+  const names={walmart:"GMA (Walmart)",bestbuy:"9to5Google (Best Buy)",costco:"Costco97 (Costco leak)",amazon:"Amazon",dicks:"DICK'S press release",lowes:"Hunker (Lowe's)",meijer:"Siliconera (Meijer)",meijerweb:"Meijer.com",sams:"Slickdeals (Sam's Club)",hf:"Slickdeals (Harbor Freight)",hd:"Visualping (Home Depot)",targettoys:"Target (Top Toys list)",targetprices:"The Freebie Guy (Target toy prices)",amazontoys:"Amazon (Top Toys list)",target:"Target press release",targetmr:"MacRumors (Target)",kohls:"Pirates & Princesses (Kohl's)",macys:"Pirates & Princesses (Macy's)",jcp:"Find Subscription Boxes (JCPenney)",amazon2:"TechRadar (Amazon)",costco2:"Pirates & Princesses (Costco round 2)",academy:"Academy.com",lowes2:"TAG24 (Lowe's)",lowes3:"Yahoo Shopping (Lowe's)",lowes4:"House Digest (Lowe's)",costco3:"Southern Savers (full Costco ad)",sams2:"Krazy Coupon Lady (Sam's Club)",hd2:"Home Depot Helper",amazon3:"9to5Toys (Amazon Apple deals)",targettoday:"TODAY (Target)",bestbuy2:"Pirates & Princesses (Best Buy)",bestbuy3:"MacRumors (Best Buy)",macys2:"Visualping (Macy's)",menards:"dealnews (Menards)",bestbuy4:"Best Buy press release (Nov 17)",amazon4:"9to5Toys (Amazon Black Friday)",amazon5:"Tom's Guide (Amazon live)",amazon6:"Popular Science (Amazon deals)",amazon7:"9to5Toys (Amazon devices)",hd3:"Bob Vila (Home Depot tools)",macys3:"Krazy Coupon Lady (Macy's)",academy2:"Academy.com (sports deals)",tsc:"Katalozi365 (Tractor Supply ad)",tsc2:"Hip2Save (Tractor Supply)",walmart2:"Yahoo Shopping (Walmart early deals)",amazon8:"Tom's Guide (Amazon LEGO)",hoka2:"Tom's Guide (HOKA sale)",jcp2:"Krazy Coupon Lady (JCPenney)",walmart3:"BestReviews (Walmart)",lowes5:"Bob Vila (Lowe's tools)",kohls2:"Good Morning America (Kohl's)",target2:"Digital Citizen (Target dates)",hd6:"Hunker (Home Depot)",hf3:"SlashGear (Harbor Freight)",jcp3:"The Freebie Guy (JCPenney)",macys5:"Macy's Black Friday guide",walmart4:"Yahoo Shopping (Walmart Black Friday)",bestbuy5:"Best Buy Corporate News",bestbuy6:"9to5Toys (Best Buy)",dicks3:"The Freebie Guy (Dick's)",amazon9:"Washington Times (retailer list)",walmart5:"Hip2Save (Walmart Black Friday)",gamesradar1:"GamesRadar+ (gaming deals)",today1:"TODAY (Amazon early deals)",macworld1:"Macworld (Apple deals)",target3:"Siliconera (Target ad)",academy3:"Hip2Save (Academy ad)",kohls3:"Hip2Save (Kohl's The Big One)",kohls4:"Hip2Save (Kohl's Black Friday)",macys6:"Hip2Save (Macy's Black Friday)",hd7:"House Digest (Home Depot)",walmart1:"MacRumors (Walmart)",bestbuy1:"Best Buy (Best Buy)",bestbuy7:"Passion for Savings (Best Buy)",bestbuy8:"TechRadar (Best Buy)",dicks1:"Hip2Save (Dick's)",academy1:"Academy Sports + Outdoors (Academy)",academy4:"Weekly Ad Hunters (Academy)",kohls1:"Passionate Penny Pincher (Kohl's)",samsclub1:"Hip2Save (Sam's Club)",lowes1:"Hip2Save (Lowe's)",homedepo1:"The Krazy Coupon Lady (Home Depot)"};
   $("#srcList").innerHTML="Sources: "+Object.keys(SRC).map(k=>`<a href="${SRC[k]}" target="_blank" rel="noopener">${esc(names[k]||k)}</a>`).join(" · ");
 }
 
